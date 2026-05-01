@@ -3,7 +3,7 @@
  */
  
 #include <stdio.h>
-#include<limits.h>
+#include <limits.h>
  
 //Function to find maximum element of the array
 int max_element(int array[], int size) 

@@ -1,11 +1,11 @@
 /*
+THIS ONLY APLLIED TO NON NEGTIVE INTEGERS
 LOGIC
 	1. create a series of buckets. find the max. 
-	2.num in an array of integers
+	2. num in an array of integers
 	3. decide wihch number go to which bucket:
 		3.1 normalize numbers: normalized = num (max + 1) 
 		3.2 bucketno = int(n * normalized)
-	3. 
 	4. insert sort applied to each bucket
 	5. get a sorted array
 */
@@ -13,23 +13,41 @@ LOGIC
 #include <stdio.h>
 
 //main bucket sort function
-int bucket_sort(int arr, int len_arr)
+int bucket_sort(int arr[], int len_arr)
 {
 	int	max;
 	int	i;
-	int	bucket[max + 1];
+	int	bucket[max + 1];//why the size of bucket is (max+1)?
+	int normalized;
+	int bucket_num;
+	int	len_bucket;
+	int	output[];
 
 	max = max_num(arr, len_arr);
 	if (len_arr == 0)
 		return (arr);
-	//create an empty bucket and initialize it into 0
+	//part1: create an empty bucket and initialize it into 0
 	i = 0;
 	while (i <= max)
 	{
 		bucket[i] = 0;
 		i++;
 	}
-	
+	//part2: normalize and place into buckets
+	i = 0;
+	while (i <= max)//loop through each element in array
+	{
+		normalized = arr[i] / (max + 1);
+		bucket_num = len_arr * normalized;//how to convert result into int?
+		//append each number into bucket
+		bucket[bucket_num]?
+	}
+	//part3: sort each bucket with insert sort
+	len_bucket = 
+	while (bucket_num < )
+		insert_sort(bucket[bucket_num], len_bucket);
+	//part4: combine sorted buckets
+	output[] = ft_strcat?//how to append sorted buckets
 }
 
 //find the max. number in an array
@@ -98,7 +116,7 @@ int main(void)
 	printf("before: ");
 	print_arr(arr, len_arr);
 	printf("\n");
-	insert_sort(arr, len_arr);
+	bucket_sort(arr, len_arr);
 	printf("after: ");
 	print_arr(arr, len_arr);
 	return 0;
