@@ -121,3 +121,8 @@ int main(void)
 	print_arr(arr, len_arr);
 	return 0;
 }
+
+function(int arr[]) = function(int *arr)
+
+char str[]
+char *str
