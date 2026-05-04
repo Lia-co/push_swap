@@ -1,9 +1,10 @@
-#LOGIC
+# LOGIC
 This section explains how this program is processed step by step. </br>
 1. Error checking if passed arguments and flags with correct format.
 - if passing mix string and integer --> error
 - if passing duplicate values --> error
 - if passing integers with double quotation as a str --> split function.
+- if passing input as a variable number of command line arguments --> convert them into linked list. 
 - flags
 - bench mode
 

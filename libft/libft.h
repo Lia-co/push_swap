@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/03/13 15:18:18 by sliang        #+#    #+#                 */
-/*   Updated: 2026/04/06 16:39:43 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/04 18:07:48 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ char	**ft_split(char const *s, char c);
 // PART 3
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }					t_list;
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);

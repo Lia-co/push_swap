@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/04/01 11:21:40 by sliang        #+#    #+#                 */
-/*   Updated: 2026/04/04 12:52:10 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/04 18:07:59 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ NOTE
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*new;
 
