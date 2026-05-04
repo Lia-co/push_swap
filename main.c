@@ -6,11 +6,17 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/01 16:47:06 by sliang        #+#    #+#                 */
-/*   Updated: 2026/05/01 18:45:59 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/03 14:09:26 by shiyuan       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+float 	compute_disorder(t_list *stack_a);
+void 	printList(t_list *stack_a);
 
 float compute_disorder(t_list *stack_a)
 {
@@ -49,14 +55,53 @@ void printList(t_list *stack_a)
     printf("NULL\n");
 }
 
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
+}
+
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst != NULL && lst->next != NULL)
+		lst = lst->next;
+	return (lst);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*temp;
+
+	if (!new || !lst)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	temp = ft_lstlast(*lst);
+	temp->next = new;
+}
+
 int main(void)
 {
 	t_list	*stack_a;
 	int		arr[3] = {35, 51, 3};
 	
 	stack_a = ft_lstnew((int *)5);
+	printf("Linked List:\n");
 	ft_lstadd_back(&stack_a, ft_lstnew(&arr[0]));
+	printf("Linked List:\n");
 	ft_lstadd_back(&stack_a, ft_lstnew(&arr[1]));
+	printf("Linked List:\n");
 	ft_lstadd_back(&stack_a, ft_lstnew(&arr[2]));
 	
 /* 	t_list *node1 = malloc(sizeof(t_list));
