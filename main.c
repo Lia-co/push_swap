@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/04 13:37:21 by sliang        #+#    #+#                 */
-/*   Updated: 2026/05/04 20:15:49 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/05 10:24:27 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ int main(int argc, char *argv[])
 	printList(stack_a);
 	printf("\n");
 	dis_metric = compute_disorder(stack_a);
-	printf("print dis_metric: %.3f", dis_metric);
+	printf("print dis_metric: %f%%\n", dis_metric);
 }

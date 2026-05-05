@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/04 16:01:56 by sliang        #+#    #+#                 */
-/*   Updated: 2026/05/04 19:48:50 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/04 20:26:43 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,3 @@ t_list *make_list(int argc, char *argv[])
 	node->next = NULL;
 	return (stack_a);
 }
-/*------------test make_list function------------*/
