@@ -1,15 +1,12 @@
 #include "push_swap.h"
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	ft_putstr_fd(char *s, int fd);
-
 /*
 check if
 	-arguments contain valid flags
 	-choose force algorithms
 	-choose bench mode
 */
-void check_flag(int argc, char *argv[], t_flag *flag)
+void check_flag(unsigned int argc, char *argv[], t_flag *flag)
 {
 	unsigned int	i;			
 
@@ -36,44 +33,4 @@ void check_flag(int argc, char *argv[], t_flag *flag)
 			ft_putstr_fd("Error", 1);
 		i++;
 	}
-}
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (i < n && (s1[i] || s2[i]))
-	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
-	}
-	return (0);
-}
-
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write (fd, &s[i], 1);
-		i++;
-	}
-}
-
-int	main(int argc, char *argv[])
-{
-	struct s_flag flag;
-	t_flag *ptr_flag = &flag;
-
-	//initialize struct s_flag
-	ptr_flag->flag_num = 0;
-	ptr_flag->algorithm = "--adaptive";
-	ptr_flag->bench = 0;
-	check_flag(argc, argv, ptr_flag);
 }
