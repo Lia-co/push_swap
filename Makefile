@@ -6,13 +6,14 @@
 #    By: sliang <sliang@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/05/04 12:36:48 by sliang        #+#    #+#                  #
-#    Updated: 2026/05/04 20:22:11 by sliang        ########   odam.nl          #
+#    Updated: 2026/05/20 09:46:51 by shiyuan       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 #colours
 GREEN = \033[1;92m
 RED = \033[31m
+BLUW = \033[0;34m
 WHITE = \033[1;60m
 RESET = \033[0m
 
@@ -32,19 +33,21 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 GDBFLAG = -g
 
-all: libft $(NAME)
-
-libft: $(LIBFT_LIB)
+all: $(LIBFT_LIB) $(NAME)
 
 clean:
 	@rm -rf $(OBJS_DIR)
-	@echo "$(RED)Object files is removed.$(RESET)"
+	@echo "$(RED)push_swap object files is removed.$(RESET)"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(RED)Program and objects files are removed.$(RESET)"
+	@echo "$(RED)push_swap rogram and its objects files are removed.$(RESET)"
 
 re: fclean all
+
+$(LIBFT_LIB):
+	@make -C $(LIBFT_DIR)
+	@echo "$(GREEN)$@ is compiled.$(RESET)"
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_LINK) -o $(NAME)
@@ -55,10 +58,6 @@ $(OBJS_DIR):
 
 $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@echo "$(WHITE)compiling file $< ->$(RESET) $(GREEN)$@ $(RESET)"
-
-$(LIBFT_LIB):
-	@make -C $(LIBFT_DIR)
-	@echo "$(GREEN)$@ is compiled.$(RESET)"
+	@echo "$(BLUE)compiling push_swap file $< ->$(RESET) $(GREEN)$@ $(RESET)"
 
 .PHONY: all clean fclean re

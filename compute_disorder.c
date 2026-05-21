@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/01 16:47:06 by sliang        #+#    #+#                 */
-/*   Updated: 2026/05/04 20:18:06 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/20 18:02:00 by shiyuan       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ float compute_disorder(t_list *stack_a)
 		}
 		current_node = current_node->next;
 	}
-	return (mistakes / total_pairs);
+	return ((mistakes / total_pairs) * 100);
 }
