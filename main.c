@@ -6,7 +6,7 @@
 /*   By: sliang <sliang@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/04 13:37:21 by sliang        #+#    #+#                 */
-/*   Updated: 2026/05/05 10:24:27 by sliang        ########   odam.nl         */
+/*   Updated: 2026/05/21 11:50:43 by sliang        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,17 @@ int main(int argc, char *argv[])
 	printf("\n");
 	dis_metric = compute_disorder(stack_a);
 	printf("print dis_metric: %f%%\n", dis_metric);
+}
+
+// test check_flag function
+int	main(int argc, char *argv[])
+{
+	struct s_flag flag;
+	t_flag *ptr_flag = &flag;
+
+	//initialize struct s_flag
+	ptr_flag->flag_num = 0;
+	ptr_flag->algorithm = "--adaptive";
+	ptr_flag->bench = 0;
+	check_flag(argc, argv, ptr_flag);
 }
