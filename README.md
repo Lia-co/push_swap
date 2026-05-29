@@ -64,15 +64,35 @@ This project we choosed to use singly linked list as data structure. Linked list
 This proram converts arguments as intergers and assign linked list stack a, which contains all values; later an empty stack b will be created. If not forced algorithm is chose, this program will calculate disorder metric of stack a and choose suitable algorithms. After data are sorted, two stacks will be free and cleaned.</br>
 
 ## Selection sort
-
+There are three phases for selection sort. Selection always find the smallest value in stack_a first and push it to the stack_b and then push back.</br>
+- The 1st while loop only apply to above three data. After calculating the size of the stack_a, a helper function will find the min value postion.</br>
+- If the current index is equal to the min value's position, then push the data to stack_b; else it is rotated to the bottom of the top depends on where it is located.
+- In the end, stack_b will push all data back to stack_a and stack_a will be sorted in ascending order.
 
 ## Bucket sort
-In general. there are two phases. Phase 1 push data to stack_b as chunks, phase 2 push back sorted data back.</br> 
-In phase 1, there are three condiotns are checked (compare data's index and chunck window): if index < i; if index <= i + chunck_size; and index > i + chunck_size. If index is left behind the current chunck window, it is pushed to stack_b and rotate it to the bottom; if index is within the current chunck window, the data is pushed to stack_b normally; it the index is behind, then rotate this data to the bottom of stack_a and wait for later.</br>
-In phase 2, function find the max integer will push the current maxium data back to stack a first, therefore, when stack_b is empty, stack_a is a sorted linked list.</br> 
+In general. there are two phases.Phase 1 push data to stack_b as chunks, phase 2 push back sorted data back.</br> 
+- In phase 1, there are three condiotns are checked (compare data's index and chunck window): if index < i; if index <= i + chunck_size; and index > i + chunck_size. If index is left behind the current chunck window, it is pushed to stack_b and rotate it to the bottom; if index is within the current chunck window, the data is pushed to stack_b normally; it the index is behind, then rotate this data to the bottom of stack_a and wait for later.</br>
+- In phase 2, function find the max integer will push the current maxium data back to stack a first, therefore, when stack_b is empty, stack_a is a sorted linked list.</br> 
 
 ## Radix sort
+Radix sort will compare data in bit level, in other words, we use bitwise operators to right shift bit postion to compare data.</br>
+- After get the stack_a's size, the outer while loop starts when stack_a is not sorted, and assign already compared bits variabl bits_done as 0.
+- The 1st nested while loop compares the data's index in stack_a with two bitwise operators `>>` and `&` . If the index right bit is 1, the data will be rotated at the bottom of stack_a; if it is 0, it will be pushed to stack_b. bits_done increments.</br>
+- When the bits_done is equal to the value of list size, stack_b will push data into stack_a again. After all data are pushed to stack_b, bit_position will increment until stack_a is sorted.
 
+# Task seperation
+
+| intra    | Task                         		  |
+| -----    | -----------------------------------  |
+| slaing   | make linked list                     |
+|          | computer disorder                    | 
+|          | bench mode                           | 
+| samudgal | parsing data                         | 
+|          | operations                           | 
+|          | simple algo                          |
+|          | mediuem algo                         |
+|          | complex algo                         |
+|          | adaptive algo                        |
 
 # Resources
 
